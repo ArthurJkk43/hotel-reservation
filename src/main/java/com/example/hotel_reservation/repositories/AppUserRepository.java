@@ -1,6 +1,6 @@
 package com.example.hotel_reservation.repositories;
 
-import com.example.hotel_reservation.models.users.AppUser;
+import com.example.hotel_reservation.models.entities.users.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

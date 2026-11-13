@@ -1,8 +1,8 @@
 package com.example.hotel_reservation.repositories;
 
 import com.example.hotel_reservation.models.enums.UserStatus;
-import com.example.hotel_reservation.models.users.AppUser;
-import com.example.hotel_reservation.models.users.Role;
+import com.example.hotel_reservation.models.entities.users.AppUser;
+import com.example.hotel_reservation.models.entities.users.Role;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

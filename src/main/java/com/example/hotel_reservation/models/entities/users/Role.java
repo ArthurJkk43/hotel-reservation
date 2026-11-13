@@ -1,4 +1,4 @@
-package com.example.hotel_reservation.models.users;
+package com.example.hotel_reservation.models.entities.users;
 
 import jakarta.persistence.*;
 import lombok.Getter;

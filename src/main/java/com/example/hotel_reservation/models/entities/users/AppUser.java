@@ -1,4 +1,4 @@
-package com.example.hotel_reservation.models.users;
+package com.example.hotel_reservation.models.entities.users;
 
 import com.example.hotel_reservation.models.enums.UserStatus;
 import jakarta.persistence.*;
