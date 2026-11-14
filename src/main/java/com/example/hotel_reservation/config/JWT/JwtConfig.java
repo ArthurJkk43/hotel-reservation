@@ -1,4 +1,4 @@
-package com.example.hotel_reservation.config;
+package com.example.hotel_reservation.config.JWT;
 
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;

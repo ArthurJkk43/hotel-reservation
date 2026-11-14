@@ -2,6 +2,7 @@ package com.example.hotel_reservation.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -28,6 +29,14 @@ public class GlobalExceptionHandler {
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(HttpStatus.BAD_REQUEST, "Validation failed");
         problem.setTitle("Invalid request");
         problem.setProperty("errors", errors);
+        return problem;
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ProblemDetail handleAuthentication(AuthenticationException ex) {
+        ProblemDetail problem = ProblemDetail.forStatusAndDetail(
+                HttpStatus.UNAUTHORIZED, "Invalid email or password");
+        problem.setTitle("Authentication failed");
         return problem;
     }
 }
