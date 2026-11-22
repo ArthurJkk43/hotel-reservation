@@ -11,6 +11,8 @@ import org.hibernate.type.SqlTypes;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -99,4 +101,12 @@ public class Hotel {
     private Instant updatedAt;
 
     private Instant deletedAt;
+
+    // hotel_amenity has only the two key columns, so a plain @ManyToMany is enough.
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "hotel_amenity",
+            joinColumns = @JoinColumn(name = "hotel_id"),
+            inverseJoinColumns = @JoinColumn(name = "amenity_id"))
+    private Set<Amenity> amenities = new HashSet<>();
 }
